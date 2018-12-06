@@ -1,0 +1,141 @@
+$white: #F9FBF2;
+$black: #46494C;
+$lBlue: #3F88C5;
+$blue: #6369D1;
+$dBlue: #08415C;
+$tFont: 'Berkshire Swash', cursive;
+$bFont: 'Cormorant', serif;
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  font-family: $bFont;
+  color: $black;
+}
+main {
+  padding-top: 4.5em;
+}
+.top {
+  position: fixed;
+  width: 100%;
+  background-color:$blue;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: $tFont;
+  font-size: 1.5em;
+  color: $white;
+  text-transform: capitalize;
+  padding: .2em 0;
+  font-weight: normal;
+  z-index: 100;
+  .mobile {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  button {
+    background-color: transparent;
+    color: $white;
+    font-size: 1em;
+    margin: 0 .25em .25em 0;
+    border: .07em solid $white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.3em;
+  }
+  .down {
+    transition: .5s ease-in-out;
+  }
+  .up {
+    transition: .5s ease-in-out;
+    transform: rotate(180deg);
+  }
+}
+.shown, .hidden {
+  background-color: $blue;
+  width: 100%;
+  position: fixed;
+  margin: 4em 0 0 0;
+  padding-top: .5em;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: .07em solid $dBlue;
+  transition: .5s ease-in-out;
+  a {
+    color: $white;
+    font-family: $tFont;
+    margin: 0 0 .5em 0;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: 1s ease-in-out;
+  }
+  a.active {
+    color: $lBlue;
+    text-shadow: .1em .1em .1em $dBlue;
+    transition: 1s ease-in-out;
+  }
+}
+.hidden {
+  top: -50%;
+}
+.shown {
+  top: 0%
+}
+.side {
+  display: none;
+}
+@media (min-width: 800px) {
+  .title {
+    display: flex;
+    font-size: 2.2em;
+    div {
+      margin: 0 .15em;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .mobile {
+      button{
+      display: none;
+    }
+  }
+  .content{
+    width: 100%;
+    height: 100%;
+    margin: .5em 0 0 11.5em;
+  }
+  main {
+    display: flex;
+    width: 100%;
+    height: 100%;    
+    }
+  .side {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background-color: $blue;
+    height: 100%;
+    a {
+      padding: 1em 1em 1em 1.5em;
+      color: $white;
+      font-family: $tFont;
+      font-size: 1.5em;
+      text-transform: capitalize;
+      text-decoration: none;
+      transition: 1s ease-in-out;
+      text-align: right;
+    }
+    a.active {
+      background-color: $white;
+      color: $lBlue;
+      text-shadow: .1em .1em .1em $dBlue;
+      transition: 1s ease-in-out;
+    }
+  }
+}
+
+
